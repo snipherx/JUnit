@@ -11,6 +11,7 @@ class BeforeEachAfterEachTest {
 
     @BeforeEach
     void setUp() {
+        System.out.println("Test Started");
         account = new BankAccount("Ashu", 1000);
     }
 
@@ -36,5 +37,5 @@ class BeforeEachAfterEachTest {
     void tearDown() {
         System.out.println("Test completed");
         account = null;
-    }
+        }
 }
