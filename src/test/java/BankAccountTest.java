@@ -67,6 +67,11 @@ public class BankAccountTest {
         String value=null;
         assertNull(value);
     }
-
+    @Test
+    void testInvalidDeposit()
+    {
+        BankAccount account=new BankAccount("AShu",500);
+        assertThrows(IllegalArgumentException.class,()->account.deposit(0));
+    }
 }
 
