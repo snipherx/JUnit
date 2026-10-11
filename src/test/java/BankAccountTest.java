@@ -61,6 +61,12 @@ public class BankAccountTest {
         BankAccount account=new BankAccount("Ashu",100);
         assertFalse(account.getBalance()<0);
     }
+    @Test
+    void testNullValue()
+    {
+        String value=null;
+        assertNull(value);
+    }
 
 }
 
