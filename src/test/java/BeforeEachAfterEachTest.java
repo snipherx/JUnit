@@ -1,10 +1,11 @@
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class BeforeEachTest {
+class BeforeEachAfterEachTest {
 
     private BankAccount account;
 
@@ -30,5 +31,10 @@ class BeforeEachTest {
         account.withdraw(300);
 
         assertEquals(700.0, account.getBalance());
+    }
+    @AfterEach
+    void tearDown() {
+        System.out.println("Test completed");
+        account = null;
     }
 }
