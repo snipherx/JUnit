@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BankAccountTest {
     @Test
@@ -31,6 +32,28 @@ public class BankAccountTest {
 
         ->If both values match, the test passes; otherwise, it fails.
         */
+    }
+    @Test
+    void testWithdraw()
+    {
+        //Arrange
+        BankAccount account=new BankAccount("Ashutosh",2000);
+        //Act
+        account.withdraw(700);
+        //Assert
+        assertEquals(1300,account.getBalance());
+
+    }
+
+    @Test
+    void testBalanceIsPositive()
+    {
+        //Arrange
+        BankAccount account=new BankAccount("Ashu",1000);
+        //Act
+        account.withdraw(800);
+        //Assert
+        assertTrue(account.getBalance()>0);  //Check Condition
     }
 
 }
